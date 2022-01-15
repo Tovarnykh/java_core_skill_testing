@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 final class FundamentalProgrammingStructures {
 	public static void main(String[] args) {
-		scannerExercise2();
+		arrayExercise1();
 	}
 	
 	private static void scannerExercise1() {
@@ -30,4 +30,31 @@ final class FundamentalProgrammingStructures {
 		newtext.insert(pos,text2);
 		System.out.println(newtext);
 	}
+	
+	private static void arrayExercise1() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array: ");
+		int size = sc.nextInt();
+		int[] mass = new int[size];
+		for(int i =0; i<size;i++) {
+			mass[i] = sc.nextInt();
+			System.out.print(mass[i]+" ");
+		}
+		int min = mass[0];
+		int max = mass[0];
+		int rep = 0;
+		for(int numb:mass) {
+			if(numb<min) {
+				min = numb;
+			}
+			if(numb>max) {
+				max = numb;
+			}
+			if(numb==5)
+				rep++;
+		}
+		System.out.println("\nmin: "+min+"; max: "+max+"; rep: "+rep);
+	}
+
+	
 }
