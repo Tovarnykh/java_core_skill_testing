@@ -3,12 +3,11 @@ package JavaBasic;
 import java.util.Scanner;
 
 final class FundamentalProgrammingStructures {
-	public static void main(String[] args) {
-		arrayExercise1();
-	}
+	
+	protected static Scanner sc = new Scanner(System.in);
+	
 	
 	private static void scannerExercise1() {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your name: ");
 		String name = sc.nextLine();
 		System.out.println("Enter your city name: ");
@@ -19,7 +18,6 @@ final class FundamentalProgrammingStructures {
 	}
 	
 	private static void scannerExercise2() {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Main text: ");
 		String text = sc.nextLine();
 		System.out.println("Something to add: ");
@@ -32,7 +30,6 @@ final class FundamentalProgrammingStructures {
 	}
 	
 	private static void arrayExercise1() {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter size of array: ");
 		int size = sc.nextInt();
 		int[] mass = new int[size];
