@@ -1,6 +1,7 @@
 package JavaBasic;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 	
@@ -19,6 +20,7 @@ private static class Point{
 	private float calcLength (Point otherPoint) {
 		return 0;
 	}
+	
 }
 
 private static class Circle{
@@ -34,9 +36,15 @@ private static class Circle{
 }
 
 private static class CircleGeneretor{
+		Random rand = new Random();
 		ArrayList<Circle> circles = new ArrayList<Circle>();
 		private void generate(int countOfCircles) {
 			//genearting random circles with random radiuses
+			for(int i = 0; i<countOfCircles;i++) {
+				Point point = new Point(rand.nextDouble(),rand.nextDouble());
+				
+				//Circle circle = new Circle();
+			}
 		}
 		private int calcCountOfCollisions() {
 			return 0;
