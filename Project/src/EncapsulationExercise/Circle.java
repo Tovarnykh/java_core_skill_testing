@@ -1,15 +1,17 @@
 package EncapsulationExercise;
 
-import EncapsulationExercise.Main.Point;
 
 public class Circle{
-	private double radius;
+	double radius;
 	Point point;
 	Circle(double radius, Point point){
 		this.radius = radius;
 		this.point = point;
 	}
-	private boolean collisionCheck(Circle otherCircle,double length) {
-		return this.radius+otherCircle.radius>length? false : true;
+	public boolean collisionCheck(Circle otherCircle) {
+		System.out.print(otherCircle.point.x);
+		//this.radius+otherCircle.radius>calcLength(otherCircle.point)? false : true;
+		return false;
 	}
+	
 }
