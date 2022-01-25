@@ -13,12 +13,15 @@ public class CircleGenerator {
 			circles.add(circle);
 		}
 	}
-	/*private int calcCountOfCollisions() {
-		for(int i =0; i<circles.size();i++) {
+	public int calcCountOfCollisions() {
+		int tmp = 0;
+		for(int i =0; i<circles.size()-1;i++) {
 			Circle x = circles.get(i);
 			Circle y = circles.get(i+1);
-			//x.collision
+			if(x.collisionCheck(y)) {
+				tmp++;
+			}
 		}
-		return 0;
-	}*/
+		return tmp;
+	}
 }

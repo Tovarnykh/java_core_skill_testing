@@ -9,9 +9,7 @@ public class Circle{
 		this.point = point;
 	}
 	public boolean collisionCheck(Circle otherCircle) {
-		System.out.print(otherCircle.point.x);
-		//this.radius+otherCircle.radius>calcLength(otherCircle.point)? false : true;
-		return false;
+		return (this.radius+otherCircle.radius) > point.calcLength(otherCircle.point)? true : false;
 	}
 	
 }
