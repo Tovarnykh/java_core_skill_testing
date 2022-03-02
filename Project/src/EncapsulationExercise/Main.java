@@ -10,5 +10,4 @@ public class Main {
 		a.generate(3);
 		System.out.println(a.calcCountOfCollisions());
 	}
-
 }
