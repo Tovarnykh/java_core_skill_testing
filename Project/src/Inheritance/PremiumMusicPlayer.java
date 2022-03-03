@@ -1,6 +1,6 @@
 package Inheritance;
 
-public class PremiumMusicPlayer extends BasicMusicPlayer{
+abstract public class PremiumMusicPlayer extends BasicMusicPlayer{
 		PremiumMusicPlayer(int cost){
 			super(cost);
 		}
