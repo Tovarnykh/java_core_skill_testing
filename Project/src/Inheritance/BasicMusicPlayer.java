@@ -2,7 +2,7 @@ package Inheritance;
 
 class BasicMusicPlayer {
 	private int cost;
-	protected static String[] playlist = new String[] {"She ne wmerla", "Best wishes", "Polish friend", "Pizdec in Kiev"};
+	protected static String[] playlist = new String[] {"She ne wmerla", "Best wishes", "Summer Time", "Cave Embient"};
 	BasicMusicPlayer(int cost) {
 		this.cost=cost;
 	}
