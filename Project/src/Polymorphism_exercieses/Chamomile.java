@@ -1,9 +1,8 @@
 package Polymorphism_exercieses;
 
-public class Ñhamomile extends Flower{
+public class Chamomile extends Flower{
 
-	public Ñhamomile(String name) {
-		super(name);
+	public Chamomile() {
 		
 	}
 	
