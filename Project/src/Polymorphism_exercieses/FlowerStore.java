@@ -27,16 +27,13 @@ public class FlowerStore{
 	
 	
 	public static void main(String[] args) {
-		
-		
-		
 		display();
 		sell(2,2,0);
 		display();
 		sellSequence(3, 1,1);
 		display();
-	
 		displayBouquet();
+		FlowersLoader.read();
 	}
 	static void sell(int t, int r, int c) {
 		
