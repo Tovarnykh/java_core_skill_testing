@@ -5,9 +5,11 @@ import java.util.Random;
 public class FlowerStore{
 	
 	static Random r = new Random();
-	static int ts = r.nextInt(11);
-	static int rs = r.nextInt(11);
-	static int cs = r.nextInt(11);
+	//r.nextInt(11)
+	static int ts = 5;
+	static int rs = 3;
+	static int cs = 1;
+	
 	static Tulip[] tulips;
 	static Rose[] roses; 
 	static Chamomile[] chamomilies;
@@ -40,12 +42,12 @@ public class FlowerStore{
 		}
 		
 		display();
-		sell(ts/2,rs/2,cs/2);
+		sell(2,3,0);
 		display();
-		sellSequence(ts,rs,cs);
+		sellSequence(3,0,1);
 		display();
-		
-		
+	
+		displayBouquet();
 	}
 	static void sell(int t, int r, int c) {
 		
@@ -80,8 +82,9 @@ public class FlowerStore{
 			index = index +1;
 			x=0;}
 		
-		rs-=r;
+		
 		ts -= t;
+		rs = rs -r;
 		cs -= c;
 		update();
 	}
@@ -90,7 +93,9 @@ public class FlowerStore{
 		if((t>ts) || (r>rs )|| (c>cs)) {
 			System.out.print("error");
 		}else {
-		
+			rs = rs -r;
+			ts = ts - t;
+			cs = cs - c;
 		while((t+r+c)>0) {
 			if(t>0) {
 				
@@ -99,7 +104,7 @@ public class FlowerStore{
 					index = index +1;
 
 				}
-				bouquet[x][index] = tulips[0];
+				bouquet[x][index] = new Tulip();
 				t--;
 				x++;
 			}
@@ -108,7 +113,7 @@ public class FlowerStore{
 					x=0;
 					index = index +1;
 				}
-				bouquet[x][index] = roses[0];
+				bouquet[x][index] = new Rose();
 				r--;
 				x++;
 			}
@@ -117,20 +122,19 @@ public class FlowerStore{
 					x=0;
 					index = index +1;
 				}
-				bouquet[x][index] = chamomilies[0];
+				bouquet[x][index] = new Chamomile();
 				c--;
 				x++;
 			}
 		}
-		rs-=r;
-		ts -= t;
-		cs -= c;
+		
+		
 		if(x!=0) {
 			index = index +1;
 			x=0;}
 		update();
-		
-	}}
+	}
+		}
 	
 	static void update() {
 		tulips = new Tulip[ts]; 
@@ -143,6 +147,25 @@ public class FlowerStore{
 		System.out.println("Количество роз: "+ roses.length);
 		System.out.println("Количество ромашек: "+ chamomilies.length);
 		System.out.println("Количество букетов продано: "+ index);
+	}
+	
+	static void displayBouquet() {
+		
+
+		for(int i = 0; i<index; i++) {
+			for(int g =0; g<3; g++) {
+				if(bouquet[g][i] instanceof Tulip) {
+					System.out.print("T ");
+				}
+				if(bouquet[g][i] instanceof Rose) {
+					System.out.print("R ");
+				}
+				if(bouquet[g][i] instanceof Chamomile) {
+					System.out.print("C ");
+				}
+			}
+			System.out.println("\n");
+		}
 	}
 
 }
