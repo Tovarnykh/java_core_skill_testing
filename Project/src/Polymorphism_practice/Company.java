@@ -1,5 +1,7 @@
 package Polymorphism_practice;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Company {
@@ -31,6 +33,21 @@ public class Company {
 		}
 	}
 	
+	void saveWorkerstoFile(){
+		   try(FileWriter writer = new FileWriter("d:\\Workers.txt", false))
+	        {
+			   String text="";
+			   for(SuperWorker i : workers) {
+					text+=i.name+" "+i.secondName+" "+i.salary+"\n";
+				}
+			   writer.append(text);
+			   writer.flush();
+	        }
+	        catch(IOException ex){
+	            System.out.println(ex.getMessage());
+	        } 
+	}
 	
 	
+
 }

@@ -11,6 +11,7 @@ public class Main {
 		google.addWorkerToCompnay(second);
 		google.addWorkerToCompnay(third);
 		google.displayAllInformation();
+		google.saveWorkerstoFile();
 	}
 
 }
