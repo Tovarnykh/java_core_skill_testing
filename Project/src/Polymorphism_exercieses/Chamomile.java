@@ -1,9 +1,8 @@
 package Polymorphism_exercieses;
 
 public class Chamomile extends Flower{
-
-	public Chamomile() {
-		
+	public Chamomile(int cost) {
+		super(cost);
 	}
 	
 }

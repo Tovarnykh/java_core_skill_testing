@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class FlowerStore{
 	
+	static int pocket=0;
+	
 	static Random r = new Random();
 	//r.nextInt(11)
 	static int ts = 5;
@@ -26,25 +28,12 @@ public class FlowerStore{
 	
 	public static void main(String[] args) {
 		
-		for(int i = 0; i<ts-1; i++) {
-			Tulip t = new Tulip();
-			tulips[i] = t;
-		}
 		
-		for(int i = 0; i<rs; i++) {
-			Rose ros = new Rose();
-			roses[i]=ros;
-		}
-		
-		for(int i = 0; i<cs; i++) {
-			Chamomile cha = new Chamomile();
-			chamomilies[i] = cha;
-		}
 		
 		display();
-		sell(2,3,0);
+		sell(2,2,0);
 		display();
-		sellSequence(3,0,1);
+		sellSequence(3, 1,1);
 		display();
 	
 		displayBouquet();
@@ -58,15 +47,17 @@ public class FlowerStore{
 
 			}
 			bouquet[x][index] = tulips[i];
+			pocket+=45;
 			x++;
 		}
 		for(int i = 0; i< r;i++) {
 			if(x==3) {
 				x=0;
 				index = index +1;
-
+				
 			}
 			bouquet[x][index] = roses[i];
+			pocket+=100;
 			x++;
 		}
 		for(int i = 0; i< c;i++) {
@@ -75,6 +66,7 @@ public class FlowerStore{
 				index = index +1;
 			}
 			bouquet[x][index] = chamomilies[i];
+			pocket+=70;
 			x++;
 			
 		}
@@ -97,6 +89,28 @@ public class FlowerStore{
 			ts = ts - t;
 			cs = cs - c;
 		while((t+r+c)>0) {
+			if(r>0) {
+				if(x>2) {
+					x=0;
+					index = index +1;
+				}
+				if(roses.length!=0) {
+				bouquet[x][index] = roses[r-1];}
+				r--;
+				pocket+=100;
+				x++;
+			}
+			if(c>0) {
+				if(x>2) {
+					x=0;
+					index = index +1;
+				}
+				if(chamomilies.length!=0) {
+				bouquet[x][index] = chamomilies[c-1];}
+				c--;
+				pocket+=70;
+				x++;
+			}
 			if(t>0) {
 				
 				if(x==3) {
@@ -104,28 +118,14 @@ public class FlowerStore{
 					index = index +1;
 
 				}
-				bouquet[x][index] = new Tulip();
+				if(tulips.length!=0) {
+				bouquet[x][index] = tulips[0];}
 				t--;
+				pocket+=45;
 				x++;
 			}
-			if(r>0) {
-				if(x==3) {
-					x=0;
-					index = index +1;
-				}
-				bouquet[x][index] = new Rose();
-				r--;
-				x++;
-			}
-			if(c>0) {
-				if(x==3) {
-					x=0;
-					index = index +1;
-				}
-				bouquet[x][index] = new Chamomile();
-				c--;
-				x++;
-			}
+			
+			
 		}
 		
 		
@@ -140,6 +140,20 @@ public class FlowerStore{
 		tulips = new Tulip[ts]; 
 		chamomilies = new Chamomile[cs]; 
 		roses = new Rose[rs];
+		for(int i = 0; i<ts-1; i++) {
+			Tulip t = new Tulip(45);
+			tulips[i] = t;
+		}
+		
+		for(int i = 0; i<rs; i++) {
+			Rose ros = new Rose(100);
+			roses[i]=ros;
+		}
+		
+		for(int i = 0; i<cs; i++) {
+			Chamomile cha = new Chamomile(70);
+			chamomilies[i] = cha;
+		}
 	}
 	
 	static void display() {
@@ -150,8 +164,7 @@ public class FlowerStore{
 	}
 	
 	static void displayBouquet() {
-		
-
+		System.out.println();
 		for(int i = 0; i<index; i++) {
 			for(int g =0; g<3; g++) {
 				if(bouquet[g][i] instanceof Tulip) {
@@ -164,8 +177,9 @@ public class FlowerStore{
 					System.out.print("C ");
 				}
 			}
-			System.out.println("\n");
+			System.out.println();
 		}
+		System.out.println("\n\nCash:"+pocket);
 	}
 
 }
