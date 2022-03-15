@@ -48,6 +48,8 @@ public class Company {
 	        } 
 	}
 	
-	
+	void loadWorkersFromFile() {
+		
+	}
 
 }
