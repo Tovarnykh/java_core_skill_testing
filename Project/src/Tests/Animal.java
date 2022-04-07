@@ -1,11 +1,13 @@
 package Tests;
 
-public class Animal extends Organism{
-	private String name;
+public class Animal<T> extends Organism{
+	protected T name;
 	
+	protected T id;
 	
-	public Animal(String name) {
+	public Animal(T name, T id) {
 		this.name=name;
+		this.id = id;
 	}
 	
 	
@@ -15,13 +17,11 @@ public class Animal extends Organism{
 	public void Breathe() {
 		
 	}
-	public void setName(String name) {
+	public void setName(T name) {
 		this.name = name;
 	}
 
 
-	public String getName() {
-		return name;
-	}
+	
 	
 }
