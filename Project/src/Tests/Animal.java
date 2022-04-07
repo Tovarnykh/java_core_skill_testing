@@ -1,9 +1,9 @@
 package Tests;
 
 public class Animal<T> extends Organism{
-	private T name;
+	protected T name;
 	
-	private T id;
+	protected T id;
 	
 	public Animal(T name, T id) {
 		this.name=name;

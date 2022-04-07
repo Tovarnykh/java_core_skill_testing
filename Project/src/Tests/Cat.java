@@ -1,8 +1,12 @@
 package Tests;
 
 public class Cat<T,E> extends Animal{
-	public Cat (E name,T id) {
+	public Cat (T name,E id) {
 		super(name,id);
+	}
+	
+	public T getName() {
+		return (T) name;
 	}
 	
 	/*public void display() {
