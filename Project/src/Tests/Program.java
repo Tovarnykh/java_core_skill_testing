@@ -3,9 +3,10 @@ package Tests;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
-public class Program {
+class Program {
 
 	public static void main(String[] args){
+		
 		
 		ArrayList words = new ArrayList();
 		
