@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -18,14 +19,48 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
+
+
+
 class Program_2 {
 	public static void main(String[] args){
+		FruitStore stock = new FruitStore();
+		Fruit tmpFruit;
 		
-		
+		tmpFruit = new Fruit(Fruits.APPLE, 10, "21.04.2022", 5);
+		stock.fruits.add(tmpFruit);
+		tmpFruit = new Fruit(Fruits.ORANGE, 12, "21.04.2022", 10);
+		stock.fruits.add(tmpFruit);
+		stock.saveFruits(stock);
+	}
+
+	 class LineClass{
+		 public ArrayList<String> lines = new ArrayList<>();
+		 
+		 @Override
+		    public String toString() {
+		        return "lines{" +
+		        		lines +
+		                '}';
+		    }
+	}
+
+		void lineReader(){
+			
+			Gson gson = new Gson();
+
+			try (Reader reader = new FileReader("lines.json")) {
+				
+				LineClass line = gson.fromJson(reader, LineClass.class);
+				System.out.println(line);
+			} catch (IOException e) {
+            e.printStackTrace();
+        }
 		
 	}
 	
-	void linesWriter() throws IOException{
+		void jsonWriter() throws IOException{
+
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String[] lines = {"First", "Second", "Third", "fourth", "Fifth"};
 		
@@ -39,5 +74,7 @@ class Program_2 {
 		writer.write(gson.toJson(jsonObject));
 		writer.close();
 	}
-
+		
+			
+		
 }

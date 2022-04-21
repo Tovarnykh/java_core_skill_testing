@@ -1,0 +1,5 @@
+package JSON_Generics;
+
+enum Fruits{
+	APPLE, PINEAPPLE, ORANGE, PEAR, PEACH, APRICOT, CHERRY, GRAPE, PULM, MANDARINE
+}
