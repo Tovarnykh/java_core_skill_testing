@@ -13,6 +13,9 @@ public class Fruit {
 		this.dataReceipts = dataReceipts;
 		this.cost = cost;
 	}
+	public Fruit() {
+		
+	}
 	
 	public Fruits getType() {
 		return type;

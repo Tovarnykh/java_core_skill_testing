@@ -1,15 +1,18 @@
 package JSON_Generics;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.LinkedList;
 import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import JSON_Generics.Program_2.LineClass;
+import JSON_Generics.serialize.FruitDeserializer;
 import JSON_Generics.serialize.FruitSerializer;
-import JSON_Generics.serialize.StoreSerializer;
 
 public class FruitStore {
 	List<Fruit> fruits = new LinkedList<>();
@@ -21,10 +24,7 @@ public class FruitStore {
 	void saveFruits(FruitStore store){
 		Gson gson = new GsonBuilder()
 				.setPrettyPrinting()
-				
 				.registerTypeAdapter(Fruit.class, new FruitSerializer())
-				//.registerTypeAdapter(FruitStore.class, new StoreSerializer())
-
 				.create();
 		
 		String json = gson.toJson(store);
@@ -41,8 +41,18 @@ public class FruitStore {
 		
 	}
 	
-	void loadFruitList() {
+		void loadFruitList(FruitStore store) {
 		
+		Gson gson = new GsonBuilder()
+				.registerTypeAdapter(Fruit.class, new FruitDeserializer())
+				.create();
+		try (Reader reader = new FileReader("Stock.json")) {
+			System.out.println(reader);
+			 FruitStore newStore = gson.fromJson(reader, FruitStore.class);
+			
+		} catch (IOException e) {
+        e.printStackTrace();
+    }
 	}
 
 	public List<Fruit> getFruits() {

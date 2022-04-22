@@ -1,8 +1,16 @@
 {
-  "fruit": {
-    "fruit": "ORANGE",
-    "expiration term": 12,
-    "arrival date": "21.04.2022",
-    "cost": 10
-  }
+  "fruits": [
+    {
+      "fruit": "APPLE",
+      "expiration term": 10,
+      "arrival date": "21.04.2022",
+      "cost": 5
+    },
+    {
+      "fruit": "ORANGE",
+      "expiration term": 12,
+      "arrival date": "21.04.2022",
+      "cost": 10
+    }
+  ]
 }

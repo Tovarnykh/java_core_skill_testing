@@ -31,7 +31,8 @@ class Program_2 {
 		stock.fruits.add(tmpFruit);
 		tmpFruit = new Fruit(Fruits.ORANGE, 12, "21.04.2022", 10);
 		stock.fruits.add(tmpFruit);
-		stock.saveFruits(stock);
+		//stock.saveFruits(stock);
+		stock.loadFruitList(stock);
 	}
 
 	 class LineClass{
