@@ -88,7 +88,7 @@ public class Exercise_2_Threads_With_JSON {
 				}
 				Instant endm = Instant.now();
 				Duration timeElapsed = Duration.between(startm, endm);
-				System.out.println("\nTime taken for the main thread is: "+ timeElapsed.toMillis() +" milliseconds");
+				System.out.println(" - Time taken: "+ timeElapsed.toMillis() +" milliseconds");
 	}
 	
 	
