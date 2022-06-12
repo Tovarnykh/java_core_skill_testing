@@ -35,7 +35,7 @@ class MyThread implements Runnable{
 	}
 }
 
-public class Exercise {
+public class Exercise_1 {
 	public static void main(String[] args) {
 		Thread myT = new Thread(new MyThread(), "First");
 		myT.start();

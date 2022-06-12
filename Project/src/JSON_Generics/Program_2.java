@@ -22,7 +22,7 @@ import com.google.gson.reflect.TypeToken;
 
 
 
-class Program_2 {
+ class Program_2 {
 	public static void main(String[] args){
 		FruitStore stock = new FruitStore();
 		Fruit tmpFruit;
@@ -35,7 +35,7 @@ class Program_2 {
 		stock.loadFruitList(stock);
 	}
 
-	 class LineClass{
+	  class LineClass{
 		 public ArrayList<String> lines = new ArrayList<>();
 		 
 		 @Override
